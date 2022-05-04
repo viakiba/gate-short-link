@@ -1,0 +1,21 @@
+{
+  "gatePort": 8099,
+  "forwardedHost": true,
+  "backEndIdentifyMode": "origin",
+  "backEndIdentifyHeaderName": "Identify-Value",
+  "vertxConfig":{
+
+  },
+  "redisConfig": {
+
+  },
+  "httpClientConfig": {
+
+  },
+  "proxyOptionsConfig": {
+
+  },
+  "zookeeperConfig": {
+
+  }
+}

@@ -1,0 +1,54 @@
+//gradle build -x test -Pxxxxx=dev
+buildscript {
+    ext {
+        kotlinVersion = "1.6.20"
+        vertxVersion = "4.2.7"
+        zkVersion = "3.5.8"
+        logbackVersion = "1.2.11"
+    }
+
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+    }
+}
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version "${kotlinVersion}"
+    id 'application'
+}
+
+group = 'io.github.viakiba'
+version = '1.0'
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'ch.qos.logback', name: 'logback-classic', version: "$logbackVersion"
+    testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlinVersion"
+    compile "io.vertx:vertx-web-proxy:$vertxVersion"
+    compile "io.vertx:vertx-redis-client:$vertxVersion"
+    compile "io.vertx:vertx-zookeeper:$vertxVersion" exclude group: 'org.apache.zookeeper', module: 'zookeeper'
+    implementation "org.apache.zookeeper:zookeeper:$zkVersion"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = '11'
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = '11'
+}
+
+application {
+    mainClassName = 'MainKt'
+}

@@ -66,6 +66,26 @@ config/config.json
 }
 ```
 
+#### vertxConfig
+
+ 具体配置见 **io.vertx.core.VertxOptions** [VertxOptions](https://vertx.io/docs/apidocs/io/vertx/core/VertxOptions.html) 
+
+#### redisConfig
+
+ 具体配置见 **io.vertx.redis.client.RedisOptions** [RedisOptions](https://vertx.io/docs/apidocs/io/vertx/redis/client/RedisOptions.html) 以及 [docs](https://vertx.io/docs/vertx-redis-client/java/)
+
+#### proxyOptionsConfig
+
+具体配置见 **io.vertx.httpproxy.ProxyOptions** [ProxyOptions](https://vertx.io/docs/apidocs/io/vertx/core/net/ProxyOptions.html) 以及 [docs](https://vertx.io/docs/4.2.0/vertx-http-proxy/java/)
+
+#### httpClientConfig
+
+具体配置见 **io.vertx.core.http.HttpClientOptions** [HttpClientOptions](https://vertx.io/docs/apidocs/io/vertx/redis/client/RedisOptions.html) 以及 [docs](https://vertx.io/docs/vertx-redis-client/java/)
+
+#### zookeeperConfig
+
+具体配置见 **io.vertx.spi.cluster.zookeeper.ZookeeperClusterManager#join** [RedisClientOptions](https://vertx.io/docs/apidocs/io/vertx/redis/client/RedisOptions.html) 以及 [docs](https://vertx.io/docs/vertx-zookeeper/java/)
+
 ### http / websocket
 
 #### 对等连接
